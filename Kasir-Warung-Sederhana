@@ -1,0 +1,110 @@
+package bp1_2021;
+import java.util.Scanner;
+public class ProgramKasirWarungSederhana {
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        
+        String pilihan,varian, member;
+        short jumlah;
+        int harga = 0,total = 0,terbayar,kembali;
+        
+       System.out.println("PROGRAM KASIR WARUNG SEDERHANA ");
+       System.out.print("== MENU MAKANAN ==\n"
+       + "1. Sate\n"
+       + "2. Pecel\n"
+       + "3. Penyetan\n"
+       + "MASUKKAN PILIHAN ANDA [1/2/3] : ");
+       pilihan = input.next();
+       
+       switch(pilihan){
+           case "1" :
+               System.out.print("== VARIAN ==\n"
+               + "1. SATE AYAM  (Rp. 1500/tusuk)\n"
+               + "2. SATE KAMBING   (Rp. 3000/tusuk)\n"
+               + "MASUKKAN PILIHAN VARIAN ANDA [1/2]: ");
+                varian = input.next();
+                    if(varian.equalsIgnoreCase("1")){
+                        System.out.print("MASUKKAN JUMLAH PESANAN : ");
+                         jumlah = input.nextShort();
+                         harga = jumlah*1500;
+                         System.out.println("TOTAL HARGA : "+harga);
+                }else if(varian.equalsIgnoreCase("2")){
+                        System.out.print("MASUKKAN JUMLAH PESANAN : ");
+                         jumlah = input.nextShort();
+                         harga = jumlah*3000;
+                         System.out.println("TOTAL HARGA : "+harga);
+                }else {
+                        System.out.print("VARIAN TIDAK ADA DALAM MENU!!");
+                }
+           break;
+            case "2" :
+                System.out.print("== VARIAN ==\n"
+               + "1. LAUK AYAM  (Rp. 13000/porsi)\n"
+               + "2. LAUK EMPAL   (Rp. 15000/porsi)\n"
+               + "MASUKKAN PILIHAN VARIAN ANDA [1/2]: ");
+                varian = input.next();
+                    if(varian.equalsIgnoreCase("1")){
+                        System.out.print("MASUKKAN JUMLAH PESANAN : ");
+                         jumlah = input.nextShort();
+                         harga = jumlah*13000;
+                         System.out.println("TOTAL HARGA : "+harga);
+                }else if(varian.equalsIgnoreCase("2")){
+                        System.out.print("MASUKKAN JUMLAH PESANAN : ");
+                         jumlah = input.nextShort();
+                         harga = jumlah*15000;
+                         System.out.println("TOTAL HARGA : "+harga);
+                }else {
+                        System.out.print("VARIAN TIDAK ADA DALAM MENU!!");
+                }
+           break;
+            case "3" :
+                System.out.print("== VARIAN ==\n"
+               + "1. LAUK TAHU/TEMPE  (Rp. 5000/porsi)\n"
+               + "2. LAUK TELUR   (Rp. 7000/porsi)\n"
+               + "3. LAUK AYAM  (Rp. 10000/porsi)\n"
+               + "MASUKKAN PILIHAN VARIAN ANDA [1/2/3]: ");
+                varian = input.next();
+                    if(varian.equalsIgnoreCase("1")){
+                        System.out.print("MASUKKAN JUMLAH PESANAN : ");
+                         jumlah = input.nextShort();
+                         harga = jumlah*5000;
+                         System.out.println("TOTAL HARGA : "+harga);
+                }else if(varian.equalsIgnoreCase("2")){
+                        System.out.print("MASUKKAN JUMLAH PESANAN : ");
+                         jumlah = input.nextShort();
+                         harga = jumlah*7000;
+                         System.out.println("TOTAL HARGA : "+harga);
+                }else if(varian.equalsIgnoreCase("3")){
+                        System.out.print("MASUKKAN JUMLAH PESANAN : ");
+                         jumlah = input.nextShort();
+                         harga = jumlah*10000;
+                         System.out.println("TOTAL HARGA : "+harga);
+                }else {
+                        System.out.print("VARIAN TIDAK ADA DALAM MENU!!");
+                }
+           break;
+       } 
+                
+                System.out.print("APAKAH ANDA MEMPUNYAI KARTU MEMBER WARUNG SEDERHANA? [Ya/Tidak] : ");
+                member=input.next();
+                    if(member.equalsIgnoreCase("Ya")){
+                        System.out.println("ANDA MENDAPAT DISKON 15%");
+                        total = (int) (harga-harga*0.15);
+                        System.out.println("TOTAL HARGA SETELAH DISKON : "+total);
+                    }else if(member.equalsIgnoreCase("Tidak")){
+                        System.out.println("ANDA TIDAK MENDAPATKAN DISKON");
+                        total = (int) (harga-0);
+                        System.out.println("TOTAL HARGA : "+total);
+                    }else {
+                        System.out.println("TIDAK TERDAPAT PILIHAN TERSEBUT");
+                    }
+           
+           System.out.print("TERBAYAR : ");
+           terbayar = input.nextInt();
+           kembali=terbayar-total;
+           System.out.println("TOTAL KEMBALIAN : "+kembali);
+           System.out.println("==TERIMA KASIH TELAH BELANJA DI WARUNG KAMI==");
+     
+    }
+}
